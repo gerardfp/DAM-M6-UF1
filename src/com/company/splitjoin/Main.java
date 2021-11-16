@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
         split("/tmp/file", 4);
         join("/tmp/file");
@@ -55,8 +56,3 @@ public class Main {
         }
     }
 }
-
-
-/*
-2000 / 4
- */

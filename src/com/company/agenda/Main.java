@@ -31,9 +31,11 @@ class Agenda {
 }
 
 public class Main {
+    
     static ObjectMapper objectMapper = new ObjectMapper();
     static String jsonFile = "/tmp/agenda.json";
     static Agenda agenda;
+
     public static void main(String[] args) throws IOException {
 
         try {

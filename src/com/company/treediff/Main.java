@@ -22,7 +22,7 @@ public class Main {
 
     public static void treediff(String directoryA, String directoryB) throws IOException {
 
-        /* Gaurda la ruta relativa de un fichero, su hash, y el resultado de la comparacion con otra lista de ficheros*/
+        /* Guarda la ruta relativa de un fichero, su hash, y el resultado de la comparacion con otra lista de ficheros*/
         class ComparedFile {
             Path path;
             byte[] hash;
@@ -94,12 +94,16 @@ public class Main {
 
         System.out.println("\033[34mFitxers del DirectoriA que no estan al DirectoriB\033[0m");
         filesNotInB.forEach(System.out::println);
+        
         System.out.println("\033[34mFitxers del DirectoriA que estan al DirectoriB però en una altra ruta\033[0m");
         filesOtherPathInB.forEach(System.out::println);
+        
         System.out.println("\033[34mFitxers del DirectoriB que no estan al DirectoriA\033[0m");
         filesNotInA.forEach(System.out::println);
+        
         System.out.println("\033[34mFitxers del DirectoriB que estan al DirectoriA però en una altra ruta\033[0m");
         filesOtherPathInA.forEach(System.out::println);
+        
         System.out.println("\033[34mFitxers que estan a la mateixa ruta al DirectoriA i al DirectoriB\033[0m");
         filesInAandB.forEach(System.out::println);
     }
