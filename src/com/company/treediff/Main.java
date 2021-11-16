@@ -1,4 +1,4 @@
-package com.company;
+package com.company.treediff;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,37 +8,21 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-//        flatten("/home/gerard/flatten/niats");
-//        treediff("/home/gerard/treediff/dirA", "/home/gerard/treediff/dirB");
-        dateTree("/home/gerard/datetree/directori");
-    }
-
-    public static void flatten(String directory) throws IOException {
-        Path baseDir = Paths.get(directory);
-
-        for (Path file : Files.walk(baseDir)
-                .filter(Files::isRegularFile)
-                .collect(Collectors.toList())) {
-            Files.move(file, baseDir.resolve(file.getFileName()));
-        }
-
-        for (Path dir : Files.walk(baseDir)
-                .filter(Files::isDirectory)
-                .filter(dir -> !dir.equals(baseDir))
-                .sorted(Comparator.reverseOrder())
-                .collect(Collectors.toList())) {
-            Files.delete(dir);
-        }
+        treediff("/home/gerard/treediff/dirA", "/home/gerard/treediff/dirB");
     }
 
     public static void treediff(String directoryA, String directoryB) throws IOException {
 
+        /* Gaurda la ruta relativa de un fichero, su hash, y el resultado de la comparacion con otra lista de ficheros*/
         class ComparedFile {
             Path path;
             byte[] hash;
@@ -55,6 +39,8 @@ public class Main {
                 }
             }
 
+            /* Compara el fichero con una lista de ficheros y guarda si se ha encontrado, y,
+             si se ha encontrado en la misma o se han encontrado en otras rutas*/
             void findInList(List<ComparedFile> list) {
                 for (ComparedFile file : list) {
                     if (Arrays.equals(hash, file.hash)) {
@@ -117,26 +103,4 @@ public class Main {
         System.out.println("\033[34mFitxers que estan a la mateixa ruta al DirectoriA i al DirectoriB\033[0m");
         filesInAandB.forEach(System.out::println);
     }
-
-    public static void dateTree(String directory) throws IOException {
-        flatten(directory);
-
-        Path dir = Paths.get(directory);
-
-        for (Path file : Files.walk(dir).filter(Files::isRegularFile).collect(Collectors.toList())) {
-            LocalDateTime time = LocalDateTime.parse(Files.getLastModifiedTime(file).toString(), DateTimeFormatter.ISO_DATE_TIME);
-
-            Path datePath = dir.resolve(time.getYear() + "/" + time.getMonthValue() + "/" + time.getDayOfMonth());
-            Files.createDirectories(datePath);
-            Files.move(file, datePath.resolve(file.getFileName()));
-        }
-    }
 }
-
-/*
-
-a b c
-
-x a b
-
- */
