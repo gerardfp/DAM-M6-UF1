@@ -1,0 +1,104 @@
+{
+  "feeds": [
+    {
+      "id": "21345",
+      "title": "News of the world feed",
+      "description": "News from all the world",
+      "url": "http://news.world/feed",
+      "authors": [
+        {
+          "name": "John Smith",
+          "url": "http://jonhmisth.com"
+        }
+      ],
+      "items": [
+        {
+          "id": "45678",
+          "description": "Pictures and videos showing thousands of ice spheres that recently formed on the surface of Canada's Lake Manitoba have been widely shared online.",
+          "url": "https://twitter.com/strombo/status/1463671539451187202",
+          "authors": [
+            {
+              "name": "Sakshita Khosla",
+              "url": "http://skshita.com"
+            }
+          ],
+          "attachments": [
+            {
+              "url": "https://twitter.com/strombo/1463671539451187202.jpg",
+              "mimetype": "image/jpg"
+            }
+          ]
+        },
+        {
+          "id": "98756",
+          "description": "The first real-world assessment of the effectiveness of Covaxin against symptomatic COVID-19 at least 14 days after second dose was 50%.",
+          "url": "https://www.thequint.com/amp/story/coronavirus/covaxin-50-effective-against-delta-variant",
+          "authors": [
+            {
+              "name": "Apaar Sharma",
+              "url": "http://apaar.com"
+            }
+          ],
+          "attachments": [
+            {
+              "url": "https://www.thequint.com/3435532532.jpg",
+              "mimetype": "image/jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "765456",
+      "title": "Sports feed",
+      "description": "Sports news from all the world",
+      "url": "http://news.sports/feed",
+      "authors": [
+        {
+          "name": "Anant Kaur",
+          "url": "http://anantkaur.com"
+        },
+        {
+          "name": "Mahima Kharbanda",
+          "url": "http://mahima.com"
+        }
+      ],
+      "items": [
+        {
+          "id": "45678",
+          "description": "Argentina and PSG forward Lionel Messi's",
+          "url": "https://www.latestly.com/sports/football/lionel-messis-son-thiagos",
+          "authors": [
+            {
+              "name": "Mahima Kharbanda",
+              "url": "http://mahima.com"
+            }
+          ],
+          "attachments": [
+            {
+              "url": "https://www.latestly.com/1463671539451187202.jpg",
+              "mimetype": "image/jpg"
+            }
+          ]
+        },
+        {
+          "id": "98756",
+          "description": "The 2022 Winter Olympics is expected to go ahead smoothly and successfully despite the emergence of a new COVID-19 variant.",
+          "url": "https://www.reuters.com/lifestyle/sports/china-says-olympics-will-go",
+          "authors": [
+            {
+              "name": "Veer Badani",
+              "url": "http://badani.ver"
+            }
+          ],
+          "attachments": [
+            {
+              "url": "https://www.reuters.com/3435532532.jpg",
+              "mimetype": "image/jpg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

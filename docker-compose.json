@@ -1,0 +1,37 @@
+{
+  "version": "-3.9",
+  "services": [
+    {
+      "name": "nginx",
+      "image": "nginx:latest",
+      "credential_spec": {
+        "config": "my_credential_spec"
+      }
+    },
+    {
+      "name": "redis",
+      "image": "redis:latest",
+      "deploy": {
+        "replicas": 1
+      },
+      "configs": [
+        "my_config",
+        "my_other_config"
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "name": "my_config",
+      "file": "./my_config.txt"
+    },
+    {
+      "name": "my_other_config",
+      "external": true
+    },
+    {
+      "name": "my_credential_spec",
+      "file": "./my-credential-spec.json"
+    }
+  ]
+}
